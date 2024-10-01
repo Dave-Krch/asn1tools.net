@@ -4,15 +4,27 @@ import pprint
 spec_uper = asn1tools.compile_files(['/home/krchdavi/asn1tools/examples/v2x/test.asn'], 'uper')
 
 def int_to_cs(int_):
-    print(f"{int_.type_name} from {int_.minimum} to {int_.maximum}")
+    if(int_.minimum != None):
+        print(f"[{int_.minimum}, {int_.maximum}]")
+    print(f"int {int_.name};")
+
+def seq_to_class(seq):
+    print(f"public class {seq.name}\n{{")
+
+    for member in seq.root_members:
+            if (member.type_name=='INTEGER'):
+                int_to_cs(member)
+            else:
+                print(member)
+
+    print("}")
 
 for type in spec_uper._types:
     print("--------------")
     print(f"{type}:\n{spec_uper._types[type].type.type_name}")
     if (spec_uper._types[type].type.type_name=='SEQUENCE'):
         seq = spec_uper._types[type].type
-        for member in seq.root_members:
-            print(f"  ->  {member}")
+        seq_to_class(seq)
 
     if (spec_uper._types[type].type.type_name=='INTEGER'):
         int_to_cs(spec_uper._types[type].type)
