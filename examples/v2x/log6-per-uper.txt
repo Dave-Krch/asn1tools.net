@@ -1,0 +1,510 @@
+********************************************************************************
+************************************ CAM 1 *************************************
+********************************************************************************
+
+Contents (facilities):  ITS PDU Header: 
+    Protocol Version: 2
+    Message ID: 2
+    Station ID: 2602961571
+  CoopAwarensess: 
+    Generation Delta Time: 37862
+    Basic Container: 
+      Station Type: 5
+      Reference Position: 
+        Longitude: 144050093
+        Latitude: 500401189
+        Semi Major Orientation: 1333
+        Semi Major Confidence: 284
+        Semi Minor Confidence: 280
+        Altitude [Confidence]: 25460 [8]
+    High Frequency Container [Basic Vehicle]: 
+      Heading [Confidence]: 425 [6]
+      Speed [Confidence]: 2028 [127]
+      Drive Direction: 0
+      Longitudinal Acceleration [Confidence]: 2 [102]
+      Vehicle Length [Confidence Indication]: 47 [3]
+      Vehicle Width: 19
+      Curvature [Confidence]: 1023 [7]
+      Curvature Calculation Mode: 2
+      Yaw Rate [Confidence]: -85 [8]
+    Low Frequency Container: not present
+    Special Vehicle Container: not present
+
+-----------------
+| UPER encoding |
+-----------------
+
+************************************************
+Data length 46
+02 02 9b 26 0a a3 93 e6 00 5a 6f 0d a4 ae 7b fb 
+35 a2 38 23 0a 6a 3d 42 90 58 1a 90 a3 f6 7e 02 
+e6 92 8b 37 fe e9 fe a6 10 3f df 93 d9 80 
+************************************************
+
+
+----------------
+| BER encoding |
+----------------
+
+************************************************
+Data length 154
+30 81 97 a0 0d 80 01 02 81 01 02 82 05 00 9b 26 
+0a a3 a1 81 85 80 03 00 93 e6 a1 7e a0 28 80 01 
+05 a1 23 80 04 1d d3 84 25 81 04 08 96 07 ad a2 
+0c 80 02 01 1c 81 02 01 18 82 02 05 35 a3 07 80 
+02 63 74 81 01 08 a1 52 a0 50 a0 07 80 02 01 a9 
+81 01 06 a1 07 80 02 07 ec 81 01 7f 82 01 00 a3 
+06 80 01 2f 81 01 03 84 01 13 a5 06 80 01 02 81 
+01 66 a6 07 80 02 03 ff 81 01 07 87 01 02 a8 06 
+80 01 ab 81 01 08 89 02 01 40 ab 06 80 01 ff 81 
+01 7f ac 06 80 01 fe 81 01 66 
+************************************************
+
+
+********************************************************************************
+************************************ CAM 2 *************************************
+********************************************************************************
+
+Contents (facilities):  ITS PDU Header: 
+    Protocol Version: 2
+    Message ID: 2
+    Station ID: 2602961571
+  CoopAwarensess: 
+    Generation Delta Time: 39362
+    Basic Container: 
+      Station Type: 5
+      Reference Position: 
+        Longitude: 144052979
+        Latitude: 500403193
+        Semi Major Orientation: 1327
+        Semi Major Confidence: 284
+        Semi Minor Confidence: 280
+        Altitude [Confidence]: 25460 [8]
+    High Frequency Container [Basic Vehicle]: 
+      Heading [Confidence]: 432 [6]
+      Speed [Confidence]: 2044 [127]
+      Drive Direction: 0
+      Longitudinal Acceleration [Confidence]: 1 [102]
+      Vehicle Length [Confidence Indication]: 47 [3]
+      Vehicle Width: 19
+      Curvature [Confidence]: -4 [1]
+      Curvature Calculation Mode: 0
+      Yaw Rate [Confidence]: -50 [8]
+    Low Frequency Container: 
+      Vehicle Role: 0
+      Exterior Lights: 8
+      Path history point: 
+        Latitude: -661
+        Longitude: -958
+        Altitude: 0
+        Delta time: 50
+      Path history point: 
+        Latitude: -1478
+        Longitude: -2117
+        Altitude: 0
+        Delta time: 109
+      Path history point: 
+        Latitude: -1495
+        Longitude: -2091
+        Altitude: 0
+        Delta time: 110
+      Path history point: 
+        Latitude: -1503
+        Longitude: -2066
+        Altitude: 100
+        Delta time: 110
+      Path history point: 
+        Latitude: -1500
+        Longitude: -2043
+        Altitude: 100
+        Delta time: 111
+      Path history point: 
+        Latitude: -1494
+        Longitude: -2015
+        Altitude: 100
+        Delta time: 110
+      Path history point: 
+        Latitude: -1526
+        Longitude: -2054
+        Altitude: 100
+        Delta time: 109
+      Path history point: 
+        Latitude: -1517
+        Longitude: -2041
+        Altitude: 100
+        Delta time: 110
+      Path history point: 
+        Latitude: -1453
+        Longitude: -1957
+        Altitude: 200
+        Delta time: 111
+      Path history point: 
+        Latitude: -1427
+        Longitude: -1923
+        Altitude: 100
+        Delta time: 109
+    Special Vehicle Container: not present
+
+-----------------
+| UPER encoding |
+-----------------
+
+************************************************
+Data length 134
+02 02 9b 26 0a a3 99 c2 40 5a 6f 0e 9f 2e 7b fc 
+9e 62 38 23 0a 5e 3d 42 90 58 1b 00 a3 fe 7e 02 
+e6 92 87 33 fb 21 ff 32 10 3f df 94 19 80 10 55 
+fd 6a 7f 10 58 ce 00 0c 6f d1 cb ef 74 c6 70 00 
+d9 7e 8a 1f 7d 46 33 80 06 db f4 40 fb f6 b2 00 
+00 36 df a2 37 e0 11 90 00 01 ba fd 14 bf 04 0c 
+80 00 0d b7 e8 25 f7 f9 64 00 00 6c bf 42 4f c0 
+33 20 00 03 6d fa 52 7e 16 99 32 00 1b af d3 63 
+f0 f8 c8 00 00 d8 
+************************************************
+
+
+----------------
+| BER encoding |
+----------------
+
+************************************************
+Data length 354
+30 82 01 5e a0 0d 80 01 02 81 01 02 82 05 00 9b 
+26 0a a3 a1 82 01 4b 80 03 00 99 c2 a1 82 01 42 
+a0 28 80 01 05 a1 23 80 04 1d d3 8b f9 81 04 08 
+96 12 f3 a2 0c 80 02 01 1c 81 02 01 18 82 02 05 
+2f a3 07 80 02 63 74 81 01 08 a1 51 a0 4f a0 07 
+80 02 01 b0 81 01 06 a1 07 80 02 07 fc 81 01 7f 
+82 01 00 a3 06 80 01 2f 81 01 03 84 01 13 a5 06 
+80 01 01 81 01 66 a6 06 80 01 fc 81 01 01 87 01 
+00 a8 06 80 01 ce 81 01 08 89 02 01 40 ab 06 80 
+01 ff 81 01 7f ac 06 80 01 00 81 01 66 a2 81 c2 
+a0 81 bf 80 01 00 81 02 00 08 a2 81 b5 30 10 a0 
+0b 80 02 fd 6b 81 02 fc 42 82 01 00 81 01 32 30 
+10 a0 0b 80 02 fa 3a 81 02 f7 bb 82 01 00 81 01 
+6d 30 10 a0 0b 80 02 fa 29 81 02 f7 d5 82 01 00 
+81 01 6e 30 10 a0 0b 80 02 fa 21 81 02 f7 ee 82 
+01 64 81 01 6e 30 10 a0 0b 80 02 fa 24 81 02 f8 
+05 82 01 64 81 01 6f 30 10 a0 0b 80 02 fa 2a 81 
+02 f8 21 82 01 64 81 01 6e 30 10 a0 0b 80 02 fa 
+0a 81 02 f7 fa 82 01 64 81 01 6d 30 10 a0 0b 80 
+02 fa 13 81 02 f8 07 82 01 64 81 01 6e 30 11 a0 
+0c 80 02 fa 53 81 02 f8 5b 82 02 00 c8 81 01 6f 
+30 10 a0 0b 80 02 fa 6d 81 02 f8 7d 82 01 64 81 
+01 6d 
+************************************************
+
+
+********************************************************************************
+************************************ CAM 3 *************************************
+********************************************************************************
+
+Contents (facilities):  ITS PDU Header: 
+    Protocol Version: 2
+    Message ID: 2
+    Station ID: 2602961571
+  CoopAwarensess: 
+    Generation Delta Time: 39562
+    Basic Container: 
+      Station Type: 5
+      Reference Position: 
+        Longitude: 144053391
+        Latitude: 500403476
+        Semi Major Orientation: 1326
+        Semi Major Confidence: 284
+        Semi Minor Confidence: 280
+        Altitude [Confidence]: 25460 [8]
+    High Frequency Container [Basic Vehicle]: 
+      Heading [Confidence]: 432 [6]
+      Speed [Confidence]: 2048 [127]
+      Drive Direction: 0
+      Longitudinal Acceleration [Confidence]: 1 [102]
+      Vehicle Length [Confidence Indication]: 47 [3]
+      Vehicle Width: 19
+      Curvature [Confidence]: -4 [0]
+      Curvature Calculation Mode: 0
+      Yaw Rate [Confidence]: -44 [8]
+    Low Frequency Container: not present
+    Special Vehicle Container: not present
+
+-----------------
+| UPER encoding |
+-----------------
+
+************************************************
+Data length 46
+02 02 9b 26 0a a3 9a 8a 00 5a 6f 0e c2 8e 7b fc 
+d1 e2 38 23 0a 5c 3d 42 90 58 1b 00 a4 00 7e 02 
+e6 92 87 33 fb 01 ff 4a 10 3f ff 94 19 80 
+************************************************
+
+
+----------------
+| BER encoding |
+----------------
+
+************************************************
+Data length 153
+30 81 96 a0 0d 80 01 02 81 01 02 82 05 00 9b 26 
+0a a3 a1 81 84 80 03 00 9a 8a a1 7d a0 28 80 01 
+05 a1 23 80 04 1d d3 8d 14 81 04 08 96 14 8f a2 
+0c 80 02 01 1c 81 02 01 18 82 02 05 2e a3 07 80 
+02 63 74 81 01 08 a1 51 a0 4f a0 07 80 02 01 b0 
+81 01 06 a1 07 80 02 08 00 81 01 7f 82 01 00 a3 
+06 80 01 2f 81 01 03 84 01 13 a5 06 80 01 01 81 
+01 66 a6 06 80 01 fc 81 01 00 87 01 00 a8 06 80 
+01 d4 81 01 08 89 02 01 40 ab 06 80 01 00 81 01 
+7f ac 06 80 01 00 81 01 66 
+************************************************
+
+
+********************************************************************************
+************************************ CAM 4 *************************************
+********************************************************************************
+
+Contents (facilities):  ITS PDU Header: 
+    Protocol Version: 2
+    Message ID: 2
+    Station ID: 2602961571
+  CoopAwarensess: 
+    Generation Delta Time: 40154
+    Basic Container: 
+      Station Type: 5
+      Reference Position: 
+        Longitude: 144054564
+        Latitude: 500404287
+        Semi Major Orientation: 1324
+        Semi Major Confidence: 284
+        Semi Minor Confidence: 278
+        Altitude [Confidence]: 25560 [8]
+    High Frequency Container [Basic Vehicle]: 
+      Heading [Confidence]: 431 [6]
+      Speed [Confidence]: 2056 [127]
+      Drive Direction: 0
+      Longitudinal Acceleration [Confidence]: 1 [102]
+      Vehicle Length [Confidence Indication]: 47 [3]
+      Vehicle Width: 19
+      Curvature [Confidence]: 1023 [7]
+      Curvature Calculation Mode: 2
+      Yaw Rate [Confidence]: 40 [8]
+    Low Frequency Container: not present
+    Special Vehicle Container: not present
+
+-----------------
+| UPER encoding |
+-----------------
+
+************************************************
+Data length 46
+02 02 9b 26 0a a3 9c da 00 5a 6f 0f 27 ee 7b fd 
+64 82 38 22 ca 58 3d 4f 10 58 1a f0 a4 04 7e 02 
+e6 92 87 37 fe ea 00 9a 10 40 1f 94 19 80 
+************************************************
+
+
+----------------
+| BER encoding |
+----------------
+
+************************************************
+Data length 154
+30 81 97 a0 0d 80 01 02 81 01 02 82 05 00 9b 26 
+0a a3 a1 81 85 80 03 00 9c da a1 7e a0 28 80 01 
+05 a1 23 80 04 1d d3 90 3f 81 04 08 96 19 24 a2 
+0c 80 02 01 1c 81 02 01 16 82 02 05 2c a3 07 80 
+02 63 d8 81 01 08 a1 52 a0 50 a0 07 80 02 01 af 
+81 01 06 a1 07 80 02 08 08 81 01 7f 82 01 00 a3 
+06 80 01 2f 81 01 03 84 01 13 a5 06 80 01 01 81 
+01 66 a6 07 80 02 03 ff 81 01 07 87 01 02 a8 06 
+80 01 28 81 01 08 89 02 01 40 ab 06 80 01 01 81 
+01 7f ac 06 80 01 00 81 01 66 
+************************************************
+
+
+********************************************************************************
+************************************ CAM 5 *************************************
+********************************************************************************
+
+Contents (facilities):  ITS PDU Header: 
+    Protocol Version: 2
+    Message ID: 2
+    Station ID: 2602961571
+  CoopAwarensess: 
+    Generation Delta Time: 40355
+    Basic Container: 
+      Station Type: 5
+      Reference Position: 
+        Longitude: 144054955
+        Latitude: 500404558
+        Semi Major Orientation: 1324
+        Semi Major Confidence: 284
+        Semi Minor Confidence: 278
+        Altitude [Confidence]: 25560 [8]
+    High Frequency Container [Basic Vehicle]: 
+      Heading [Confidence]: 430 [6]
+      Speed [Confidence]: 2057 [127]
+      Drive Direction: 0
+      Longitudinal Acceleration [Confidence]: 1 [102]
+      Vehicle Length [Confidence Indication]: 47 [3]
+      Vehicle Width: 19
+      Curvature [Confidence]: 1023 [7]
+      Curvature Calculation Mode: 2
+      Yaw Rate [Confidence]: 50 [8]
+    Low Frequency Container: not present
+    Special Vehicle Container: not present
+
+-----------------
+| UPER encoding |
+-----------------
+
+************************************************
+Data length 46
+02 02 9b 26 0a a3 9d a3 00 5a 6f 0f 49 ce 7b fd 
+95 62 38 22 ca 58 3d 4f 10 58 1a e0 a4 04 fe 02 
+e6 92 87 37 fe ea 00 c2 10 40 1f 94 19 80 
+************************************************
+
+
+----------------
+| BER encoding |
+----------------
+
+************************************************
+Data length 154
+30 81 97 a0 0d 80 01 02 81 01 02 82 05 00 9b 26 
+0a a3 a1 81 85 80 03 00 9d a3 a1 7e a0 28 80 01 
+05 a1 23 80 04 1d d3 91 4e 81 04 08 96 1a ab a2 
+0c 80 02 01 1c 81 02 01 16 82 02 05 2c a3 07 80 
+02 63 d8 81 01 08 a1 52 a0 50 a0 07 80 02 01 ae 
+81 01 06 a1 07 80 02 08 09 81 01 7f 82 01 00 a3 
+06 80 01 2f 81 01 03 84 01 13 a5 06 80 01 01 81 
+01 66 a6 07 80 02 03 ff 81 01 07 87 01 02 a8 06 
+80 01 32 81 01 08 89 02 01 40 ab 06 80 01 01 81 
+01 7f ac 06 80 01 00 81 01 66 
+************************************************
+
+
+********************************************************************************
+************************************ CAM 6 *************************************
+********************************************************************************
+
+Contents (facilities):  ITS PDU Header: 
+    Protocol Version: 2
+    Message ID: 2
+    Station ID: 2602961571
+  CoopAwarensess: 
+    Generation Delta Time: 40964
+    Basic Container: 
+      Station Type: 5
+      Reference Position: 
+        Longitude: 144056127
+        Latitude: 500405378
+        Semi Major Orientation: 1324
+        Semi Major Confidence: 284
+        Semi Minor Confidence: 280
+        Altitude [Confidence]: 25560 [8]
+    High Frequency Container [Basic Vehicle]: 
+      Heading [Confidence]: 427 [6]
+      Speed [Confidence]: 2068 [127]
+      Drive Direction: 0
+      Longitudinal Acceleration [Confidence]: 0 [102]
+      Vehicle Length [Confidence Indication]: 47 [3]
+      Vehicle Width: 19
+      Curvature [Confidence]: 1023 [7]
+      Curvature Calculation Mode: 2
+      Yaw Rate [Confidence]: 27 [8]
+    Low Frequency Container: not present
+    Special Vehicle Container: not present
+
+-----------------
+| UPER encoding |
+-----------------
+
+************************************************
+Data length 46
+02 02 9b 26 0a a3 a0 04 00 5a 6f 0f b0 4e 7b fe 
+27 e2 38 23 0a 58 3d 4f 10 58 1a b0 a4 0a 7e 02 
+e6 92 83 37 fe ea 00 66 10 40 1f 94 19 80 
+************************************************
+
+
+----------------
+| BER encoding |
+----------------
+
+************************************************
+Data length 154
+30 81 97 a0 0d 80 01 02 81 01 02 82 05 00 9b 26 
+0a a3 a1 81 85 80 03 00 a0 04 a1 7e a0 28 80 01 
+05 a1 23 80 04 1d d3 94 82 81 04 08 96 1f 3f a2 
+0c 80 02 01 1c 81 02 01 18 82 02 05 2c a3 07 80 
+02 63 d8 81 01 08 a1 52 a0 50 a0 07 80 02 01 ab 
+81 01 06 a1 07 80 02 08 14 81 01 7f 82 01 00 a3 
+06 80 01 2f 81 01 03 84 01 13 a5 06 80 01 00 81 
+01 66 a6 07 80 02 03 ff 81 01 07 87 01 02 a8 06 
+80 01 1b 81 01 08 89 02 01 40 ab 06 80 01 01 81 
+01 7f ac 06 80 01 00 81 01 66 
+************************************************
+
+
+********************************************************************************
+************************************ CAM 7 *************************************
+********************************************************************************
+
+Contents (facilities):  ITS PDU Header: 
+    Protocol Version: 2
+    Message ID: 2
+    Station ID: 2602961571
+  CoopAwarensess: 
+    Generation Delta Time: 41562
+    Basic Container: 
+      Station Type: 5
+      Reference Position: 
+        Longitude: 144057296
+        Latitude: 500406202
+        Semi Major Orientation: 1324
+        Semi Major Confidence: 284
+        Semi Minor Confidence: 278
+        Altitude [Confidence]: 25560 [8]
+    High Frequency Container [Basic Vehicle]: 
+      Heading [Confidence]: 425 [6]
+      Speed [Confidence]: 2067 [127]
+      Drive Direction: 0
+      Longitudinal Acceleration [Confidence]: 0 [102]
+      Vehicle Length [Confidence Indication]: 47 [3]
+      Vehicle Width: 19
+      Curvature [Confidence]: 1023 [7]
+      Curvature Calculation Mode: 2
+      Yaw Rate [Confidence]: 52 [8]
+    Low Frequency Container: not present
+    Special Vehicle Container: not present
+
+-----------------
+| UPER encoding |
+-----------------
+
+************************************************
+Data length 46
+02 02 9b 26 0a a3 a2 5a 00 5a 6f 10 17 4e 7b fe 
+ba 02 38 22 ca 58 3d 4f 10 58 1a 90 a4 09 fe 02 
+e6 92 83 37 fe ea 00 ca 10 40 1f 94 19 80 
+************************************************
+
+
+----------------
+| BER encoding |
+----------------
+
+************************************************
+Data length 154
+30 81 97 a0 0d 80 01 02 81 01 02 82 05 00 9b 26 
+0a a3 a1 81 85 80 03 00 a2 5a a1 7e a0 28 80 01 
+05 a1 23 80 04 1d d3 97 ba 81 04 08 96 23 d0 a2 
+0c 80 02 01 1c 81 02 01 16 82 02 05 2c a3 07 80 
+02 63 d8 81 01 08 a1 52 a0 50 a0 07 80 02 01 a9 
+81 01 06 a1 07 80 02 08 13 81 01 7f 82 01 00 a3 
+06 80 01 2f 81 01 03 84 01 13 a5 06 80 01 00 81 
+01 66 a6 07 80 02 03 ff 81 01 07 87 01 02 a8 06 
+80 01 34 81 01 08 89 02 01 40 ab 06 80 01 01 81 
+01 7f ac 06 80 01 00 81 01 66 
+************************************************
