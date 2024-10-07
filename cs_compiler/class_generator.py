@@ -64,11 +64,20 @@ class ClassGenerator:
         path = os.path.join(self.output_path,"bit_string", file_name)
         file = open(path, "x")
 
-        file.write("namespace " + self.namespace + ".bit_string" + " {\n" + "    " + "public class " + compiled_type.name + " {\n")
 
-            
-
-        file.write("    " + "}\n}\n")
+        file.write(   "using System.Collections;\n\n"
+                    + "namespace " + self.namespace + ".bit_string" + " {\n"
+                    + "    " + "public class " + compiled_type.name + " {\n"
+                    + "        BitArray Data { get; set; }\n"
+                    + "        Dictionary<int, string> named_bits = new Dictionary<int, string>();\n"
+                    + "        " + compiled_type.name + "()" + " {\n")
+        
+        
+        if compiled_type.type.named_bits:
+            for named_bit in compiled_type.type.named_bits:
+                file.write("            this.named_bits.Add(" + str(named_bit[1]) + ", \"" + named_bit[0] + "\");\n")
+        
+        file.write("        }\n    " + "}\n}\n")
 
     def generate_structure(self, compiled_type):
         
