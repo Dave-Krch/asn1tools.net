@@ -18,8 +18,9 @@ def compile_files(filenames, namespace, output_path, codec='uper'):
     except OSError as err:
         print(err)
 
+    generator = class_generator.ClassGenerator(namespace, output_path)
+
     for type in specification.types.values():
-        if(type.type.type_name == 'SEQUENCE'):
-            class_generator.generate_class(type, namespace, path)
+        generator.generate_structure(type)
 
 compile_files('/home/krchdavi/asn1tools.net/examples/v2x/TS102894-2v131-CDD.asn', 'test_namespace', 'test_dir')
