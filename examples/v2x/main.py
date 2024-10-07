@@ -1,13 +1,18 @@
 import asn1tools
 import pprint
 
-spec_uper = asn1tools.compile_files(['/home/krchdavi/asn1tools/examples/v2x/test.asn'], 'uper')
+spec_uper = asn1tools.compile_files(['/home/krchdavi/asn1tools.net/examples/v2x/test.asn'], 'uper')
 
 def int_to_cs(int_):
     if(int_.minimum != None):
-        print(f"[{int_.minimum}, {int_.maximum}]")
-    print(f"int {int_.name};")
+        print(f"    [Range({int_.minimum}, {int_.maximum})]")
+    print(f"    int {int_.name};")
 
+def int_to_class(int_):
+    print(f"public class {int_.name}\n{{")
+    int_to_cs(int_)
+    print("}")
+    
 def seq_to_class(seq):
     print(f"public class {seq.name}\n{{")
 
@@ -15,19 +20,19 @@ def seq_to_class(seq):
             if (member.type_name=='INTEGER'):
                 int_to_cs(member)
             else:
-                print(member)
+                print(f"    public {member.type_name} {member.name};")
 
     print("}")
 
 for type in spec_uper._types:
-    print("--------------")
-    print(f"{type}:\n{spec_uper._types[type].type.type_name}")
+    print("------------------------------------------")
+    print(f"{type}: {spec_uper._types[type].type.type_name}\n")
     if (spec_uper._types[type].type.type_name=='SEQUENCE'):
         seq = spec_uper._types[type].type
         seq_to_class(seq)
 
     if (spec_uper._types[type].type.type_name=='INTEGER'):
-        int_to_cs(spec_uper._types[type].type)
+        int_to_class(spec_uper._types[type].type)
 
 """
 hex_data_uper = [
