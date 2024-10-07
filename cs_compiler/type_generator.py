@@ -1,25 +1,29 @@
 """
 Methods for generating class properties
 """
+
+def capitalized_first(s):
+    return s[0].upper() + s[1:]
+
 class type_generator:
 
     def __init__(self, file):
         self.file = file
 
     def write_int(self, compiled_type):
-        self.file.write("        public long " + compiled_type.name.capitalize() + " { get; set; }\n")
+        self.file.write("        public long " + capitalized_first(compiled_type.name) + " { get; set; }\n")
 
     def write_bool(self, compiled_type):
-        self.file.write("        public bool " + compiled_type.name.capitalize() + " { get; set; }\n")
+        self.file.write("        public bool " + capitalized_first(compiled_type.name) + " { get; set; }\n")
 
     def write_bit_string(self, compiled_type):
-        self.file.write("        public BitArray " + compiled_type.name.capitalize() + " { get; set; }\n")
+        self.file.write("        public BitArray " + capitalized_first(compiled_type.name) + " { get; set; }\n")
 
     def write_octet_string(self, compiled_type):
-        self.file.write("        public byte[] " + compiled_type.name.capitalize() + " { get; set; }\n")
+        self.file.write("        public byte[] " + capitalized_first(compiled_type.name) + " { get; set; }\n")
 
     def write_custom_type(self, compiled_type):
-        self.file.write("        public " + compiled_type.type_name + " " + compiled_type.name.capitalize() + " { get; set; }\n")
+        self.file.write("        public " + compiled_type.type_name + " " + capitalized_first(compiled_type.name) + " { get; set; }\n")
 
     def write(self, compiled_type):
         type_method_mapping = {

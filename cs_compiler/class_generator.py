@@ -11,14 +11,13 @@ class ClassGenerator:
         self.namespace = namespace
         self.output_path = output_path
 
-    def generate_class(self, file, compiled_type):
-        
-        #file_name = compiled_type.name + ".cs"
-        #path = os.path.join(self.output_path, file_name)
+    def generate_class(self, compiled_type):
 
-        #file = open(path, "x")
+        file_name = compiled_type.name + ".cs"
+        path = os.path.join(self.output_path,"sequence", file_name)
+        file = open(path, "x")
 
-        file.write("namespace " + self.namespace + " {\n" + "    " + "public class " + compiled_type.name + " {\n")
+        file.write("namespace " + self.namespace + ".sequence" + " {\n" + "    " + "public class " + compiled_type.name + " {\n")
 
         generator = type_generator.type_generator(file);
 
@@ -31,38 +30,60 @@ class ClassGenerator:
 
         file.write("    " + "}\n}\n")
 
-    def generate_enum(self, file, compiled_type):
-        file.write("namespace " + self.namespace + " {\n" + "    " + "enum " + compiled_type.name + " {\n")
 
+    def generate_enum(self, compiled_type):
+
+        file_name = compiled_type.name + ".cs"
+        path = os.path.join(self.output_path, "enumerated", file_name)
+        file = open(path, "x")
+
+        file.write("namespace " + self.namespace + ".enumerated" + " {\n" + "    " + "enum " + compiled_type.name + " {\n")
+
+        # '-' from asn specification must be replaced with '_' beacues of c# syntax
         for member in compiled_type.type.root_index_to_data:
-            file.write("        " + compiled_type.type.root_index_to_data[member] + ",\n")
+            file.write("        " + compiled_type.type.root_index_to_data[member].replace('-', '_') + ",\n")
 
         file.write("    " + "}\n}\n")
 
-    def generate_custom_type(self, file, compiled_type):
+    def generate_custom_type(self, compiled_type):
+
+        file_name = compiled_type.name + ".cs"
+        path = os.path.join(self.output_path, file_name)
+
+        file = open(path, "x")
+
         file.write("namespace " + self.namespace + " {\n" + "    " + "custom type " + compiled_type.name + " {\n")
 
 
 
         file.write("    " + "}\n}\n")
 
-    def generate_structure(self, compiled_type):
-        file_name = compiled_type.name + ".cs"
-        path = os.path.join(self.output_path, file_name)
+    def generate_bit_string(self, compiled_type):
 
+        file_name = compiled_type.name + ".cs"
+        path = os.path.join(self.output_path,"bit_string", file_name)
         file = open(path, "x")
 
+        file.write("namespace " + self.namespace + ".bit_string" + " {\n" + "    " + "public class " + compiled_type.name + " {\n")
+
+            
+
+        file.write("    " + "}\n}\n")
+
+    def generate_structure(self, compiled_type):
+        
         type_method_mapping = {
             "SEQUENCE": self.generate_class,
             "ENUMERATED": self.generate_enum,
+            "BIT STRING": self.generate_bit_string,
         }
 
         type_name = compiled_type.type.type_name
 
         if type_name in type_method_mapping:
-            type_method_mapping[type_name](file, compiled_type)
+            type_method_mapping[type_name](compiled_type)
         else:
-            self.generate_custom_type(file, compiled_type)
+            self.generate_custom_type(compiled_type)
 
         #self.generate_class(file, compiled_type)
 

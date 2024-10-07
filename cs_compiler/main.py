@@ -15,6 +15,10 @@ def compile_files(filenames, namespace, output_path, codec='uper'):
 
     try:
         os.mkdir(path)
+        os.mkdir(os.path.join(path, "sequence"))
+        os.mkdir(os.path.join(path, "enumerated"))
+        os.mkdir(os.path.join(path, "bit_string"))
+        
     except OSError as err:
         print(err)
 
