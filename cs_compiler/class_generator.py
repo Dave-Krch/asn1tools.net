@@ -17,7 +17,7 @@ class ClassGenerator:
         path = os.path.join(self.output_path,"sequence", file_name)
         file = open(path, "x")
 
-        file.write("namespace " + self.namespace + ".sequence" + " {\n" + "    " + "public class " + compiled_type.name + " {\n")
+        file.write("using test_namespace.bit_string;\nusing test_namespace.enumerated;\n\nnamespace " + self.namespace + ".sequence" + " {\n" + "    " + "public class " + compiled_type.name.replace('-', '_') + " {\n")
 
         generator = type_generator.type_generator(file);
 
@@ -34,7 +34,7 @@ class ClassGenerator:
         path = os.path.join(self.output_path, "enumerated", file_name)
         file = open(path, "x")
 
-        file.write("namespace " + self.namespace + ".enumerated" + " {\n" + "    " + "enum " + compiled_type.name + " {\n")
+        file.write("namespace " + self.namespace + ".enumerated" + " {\n" + "    " + "public enum " + compiled_type.name.replace('-', '_') + " {\n")
 
         # '-' from asn specification must be replaced with '_' beacues of c# syntax
         for member in compiled_type.type.root_index_to_data:
@@ -49,7 +49,7 @@ class ClassGenerator:
 
         file = open(path, "x")
 
-        file.write("namespace " + self.namespace + " {\n" + "    " + "public class " + compiled_type.name + " {\n")
+        file.write("namespace " + self.namespace + " {\n" + "    " + "public class " + compiled_type.name.replace('-', '_') + " {\n")
 
         generator = type_generator.type_generator(file);
         generator.write(compiled_type.type, "value")
@@ -62,13 +62,14 @@ class ClassGenerator:
         path = os.path.join(self.output_path,"bit_string", file_name)
         file = open(path, "x")
 
+        bit_arr_init = " = new BitArray(" +  + ");"
 
         file.write(   "using System.Collections;\n\n"
                     + "namespace " + self.namespace + ".bit_string" + " {\n"
                     + "    " + "public class " + compiled_type.name + " {\n"
-                    + "        BitArray Data { get; set; }\n"
+                    + "        BitArray Data { get; set; }" + bit_arr_init + "\n"
                     + "        Dictionary<int, string> named_bits = new Dictionary<int, string>();\n"
-                    + "        " + compiled_type.name + "()" + " {\n")
+                    + "        " + compiled_type.name.replace('-', '_') + "()" + " {\n")
         
         
         if compiled_type.type.named_bits:
@@ -91,8 +92,6 @@ class ClassGenerator:
             type_method_mapping[type_name](compiled_type)
         else:
             self.generate_custom_type(compiled_type)
-
-        #self.generate_class(file, compiled_type)
 
 
 
