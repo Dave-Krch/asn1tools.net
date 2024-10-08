@@ -11,13 +11,20 @@ class ClassGenerator:
         self.namespace = namespace
         self.output_path = output_path
 
+    def includes(self) -> str:
+        generated_namespace = "using " + self.namespace + ".bit_string;\n" + "using " + self.namespace + ".enumerated;\n\n"
+        prepared_namespace  = "using AsnCoder.attributes;\nusing AsnCoder.attributes.constraints;\n\n"  
+        return generated_namespace + prepared_namespace
+
     def generate_class(self, compiled_type):
 
         file_name = compiled_type.name + ".cs"
         path = os.path.join(self.output_path,"sequence", file_name)
         file = open(path, "x")
 
-        file.write("using test_namespace.bit_string;\nusing test_namespace.enumerated;\n\nnamespace " + self.namespace + ".sequence" + " {\n" + "    " + "public class " + compiled_type.name.replace('-', '_') + " {\n")
+        file.write(self.includes())
+
+        file.write("namespace " + self.namespace + ".sequence" + " {\n" + "    " + "public class " + compiled_type.name.replace('-', '_') + " {\n")
 
         generator = type_generator.type_generator(file);
 
@@ -34,6 +41,8 @@ class ClassGenerator:
         path = os.path.join(self.output_path, "enumerated", file_name)
         file = open(path, "x")
 
+        file.write(self.includes())
+
         file.write("namespace " + self.namespace + ".enumerated" + " {\n" + "    " + "public enum " + compiled_type.name.replace('-', '_') + " {\n")
 
         # '-' from asn specification must be replaced with '_' beacues of c# syntax
@@ -49,6 +58,8 @@ class ClassGenerator:
 
         file = open(path, "x")
 
+        file.write(self.includes())
+
         file.write("namespace " + self.namespace + " {\n" + "    " + "public class " + compiled_type.name.replace('-', '_') + " {\n")
 
         generator = type_generator.type_generator(file);
@@ -62,12 +73,12 @@ class ClassGenerator:
         path = os.path.join(self.output_path,"bit_string", file_name)
         file = open(path, "x")
 
-        bit_arr_init = " = new BitArray(" +  + ");"
+        file.write(self.includes())
 
         file.write(   "using System.Collections;\n\n"
                     + "namespace " + self.namespace + ".bit_string" + " {\n"
                     + "    " + "public class " + compiled_type.name + " {\n"
-                    + "        BitArray Data { get; set; }" + bit_arr_init + "\n"
+                    + "        BitArray Data { get; set; }\n"
                     + "        Dictionary<int, string> named_bits = new Dictionary<int, string>();\n"
                     + "        " + compiled_type.name.replace('-', '_') + "()" + " {\n")
         
