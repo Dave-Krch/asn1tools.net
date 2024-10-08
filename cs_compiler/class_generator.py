@@ -11,12 +11,14 @@ class ClassGenerator:
         self.namespace = namespace
         self.output_path = output_path
 
+    #returns string for including all generated classes + predefined attributes
     def includes(self) -> str:
-        generated_namespace = "using " + self.namespace + ".bit_string;\n" + "using " + self.namespace + ".enumerated;\n\n"
+        generated_namespace = "using " + self.namespace + ".bit_string;\n" + "using " + self.namespace + ".sequence;\n" + "using " + self.namespace + ".choice;\n" + "using " + self.namespace + ".enumerated;\n\n"
         prepared_namespace  = "using AsnCoder.attributes;\nusing AsnCoder.attributes.constraints;\n\n"  
         return generated_namespace + prepared_namespace
 
-    def generate_class(self, compiled_type):
+    #TODO: addition encoding, vymyslet jak ukladat ze muzou byt additions, pri decode se muzou skipnout
+    def generate_sequence(self, compiled_type):
 
         file_name = compiled_type.name + ".cs"
         path = os.path.join(self.output_path,"sequence", file_name)
@@ -34,6 +36,26 @@ class ClassGenerator:
 
         file.write("    " + "}\n}\n")
 
+    def generate_sequence_of(self, compiled_type):
+
+        pass
+
+    def generate_choice(self, compiled_type):
+
+        file_name = compiled_type.name + ".cs"
+        path = os.path.join(self.output_path,"choice", file_name)
+        file = open(path, "x")
+
+        file.write(self.includes())
+
+        file.write("namespace " + self.namespace + ".choice" + " {\n" + "    " + "public class " + compiled_type.name.replace('-', '_') + " {\n")
+
+        generator = type_generator.type_generator(file);
+
+        for member in compiled_type.type.root_index_to_member:
+            generator.write(compiled_type.type.root_index_to_member[member])
+            
+        file.write("    " + "}\n}\n")
 
     def generate_enum(self, compiled_type):
 
@@ -92,7 +114,9 @@ class ClassGenerator:
     def generate_structure(self, compiled_type):
         
         type_method_mapping = {
-            "SEQUENCE": self.generate_class,
+            "SEQUENCE": self.generate_sequence,
+            "SEQUENCE OF": self.generate_sequence_of,
+            "CHOICE": self.generate_choice,
             "ENUMERATED": self.generate_enum,
             "BIT STRING": self.generate_bit_string,
         }
