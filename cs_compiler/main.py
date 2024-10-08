@@ -27,4 +27,4 @@ def compile_files(filenames, namespace, output_path, codec='uper'):
     for type in specification.types.values():
         generator.generate_structure(type)
 
-compile_files('/home/krchdavi/asn1tools.net/examples/v2x/TS102894-2v131-CDD.asn', 'test_namespace', 'test_dir')
+compile_files(['/home/krchdavi/asn1tools.net/examples/v2x/test.asn'], 'test_namespace', 'test_dir')

@@ -22,9 +22,6 @@ class ClassGenerator:
         generator = type_generator.type_generator(file);
 
         for member in compiled_type.type.root_members:
-
-            print(member.name)   
-            
             generator.write(member)
             
 
@@ -52,9 +49,10 @@ class ClassGenerator:
 
         file = open(path, "x")
 
-        file.write("namespace " + self.namespace + " {\n" + "    " + "custom type " + compiled_type.name + " {\n")
+        file.write("namespace " + self.namespace + " {\n" + "    " + "public class " + compiled_type.name + " {\n")
 
-
+        generator = type_generator.type_generator(file);
+        generator.write(compiled_type.type, "value")
 
         file.write("    " + "}\n}\n")
 
